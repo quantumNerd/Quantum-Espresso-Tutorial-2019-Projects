@@ -1,0 +1,28 @@
+&control
+    calculation = 'relax'
+    prefix = 'h2o'
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+    etot_conv_thr = 1e-5
+    forc_conv_thr = 1e-4
+/
+&system
+    ibrav=1, celldm(1) =10, 
+    nat=3, ntyp=2,
+    ecutwfc=25
+/
+&electrons
+    conv_thr=1e-8
+/
+&ions
+    ion_dynamics='bfgs'
+    
+/
+ATOMIC_SPECIES
+ H  1.00784  H_ONCV_PBE-1.0.oncvpsp.upf
+ O  15.999   O.pbe-n-kjpaw_psl.0.1.UPF
+ATOMIC_POSITIONS (angstrom)
+ O 0.00 0.00 0.00
+ H -1.00 0.01 0.02
+ H 1.00 0.01 0.03
+K_POINTS (automatic)
+  1 1 1 0 0 0
