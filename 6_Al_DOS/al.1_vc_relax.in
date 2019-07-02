@@ -1,0 +1,29 @@
+&control
+    calculation = 'vc-relax'
+    prefix = 'al'
+    outdir = './outdir'
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+    etot_conv_thr = 1e-6
+    forc_conv_thr = 1e-5
+/
+&system
+    ibrav=2, celldm(1) =7.652, 
+    nat=1, ntyp=1,
+    ecutwfc=40
+    ecutrho=320
+    occupations='smearing',smearing='gaussian',degauss=0.01
+/
+&electrons
+    conv_thr=1e-8
+/
+&ions
+/
+&cell
+    cell_dofree='ibrav'
+/
+ATOMIC_SPECIES
+ Al  26.981539  Al.pbe-n-kjpaw_psl.1.0.0.UPF
+ATOMIC_POSITIONS (alat)
+ Al 0.00 0.00 0.00
+K_POINTS (automatic)
+  10 10 10 0 0 0
