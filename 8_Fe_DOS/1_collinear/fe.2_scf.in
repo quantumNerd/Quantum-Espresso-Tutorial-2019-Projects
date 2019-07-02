@@ -1,0 +1,25 @@
+&control
+    calculation = 'scf'
+    restart_mode='from_scratch'
+    prefix = 'fe'
+    outdir = './outdir'
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+/
+&system
+    ibrav=3, celldm(1) =5.09578335795351, 
+    nat=1, ntyp=1,
+    ecutwfc=40
+    ecutrho=320
+    occupations='smearing',smearing='marzari-vanderbilt',degauss=0.01
+    nspin = 2
+    starting_magnetization(1)=0.1
+/
+&electrons
+    conv_thr=1e-8
+/
+ATOMIC_SPECIES
+ Fe  55.845  Fe.pbe-spn-kjpaw_psl.0.2.1.UPF
+ATOMIC_POSITIONS (alat)
+ Fe 0.00 0.00 0.00
+K_POINTS (automatic)
+  10 10 10 0 0 0

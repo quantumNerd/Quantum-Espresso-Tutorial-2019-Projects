@@ -1,0 +1,7 @@
+&DOS
+    prefix='fe'
+    outdir='./outdir/'
+    fildos='fe.dos.dat'
+    emin=-65
+    emax=50
+/
