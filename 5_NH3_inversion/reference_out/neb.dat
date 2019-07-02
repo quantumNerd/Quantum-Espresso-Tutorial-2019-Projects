@@ -1,0 +1,10 @@
+ &PATH
+ restart_mode      = 'from_scratch'
+ string_method     = 'neb',
+ nstep_path        = 50,
+ ds                = 1.D0,
+ opt_scheme        = "broyden",
+ num_of_images     = 12,
+ CI_scheme         = "no-CI",
+ path_thr          = 0.05D0,
+ /
