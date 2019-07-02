@@ -1,0 +1,52 @@
+BEGIN
+BEGIN_PATH_INPUT
+&PATH
+  restart_mode      = 'from_scratch'
+  string_method     = 'neb',
+  nstep_path        = 50,
+  ds                = 1.D0,
+  opt_scheme        = "broyden",
+  num_of_images     = 12,
+  CI_scheme         = "no-CI",
+  path_thr          = 0.05D0,
+/
+END_PATH_INPUT
+BEGIN_ENGINE_INPUT
+&CONTROL
+  prefix         = "nh3.2"
+  outdir         = "./outdir",
+  pseudo_dir     = "/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos",
+/
+&SYSTEM
+  ibrav                  = 1,
+  celldm(1)              = 10, 
+  nat                    = 4,
+  ntyp                   = 2,
+  ecutwfc                = 50,
+/
+&ELECTRONS
+  conv_thr    = 1.D-8,
+/
+&IONS
+/
+ATOMIC_SPECIES
+ N  14.0067  N.oncvpsp.upf
+ H  1.00784  H_ONCV_PBE-1.0.oncvpsp.upf
+BEGIN_POSITIONS
+FIRST_IMAGE
+ATOMIC_POSITIONS (angstrom)
+N        0.000000000   0.000000000   0.393388867    0   0   1
+H        0.242745664   0.905006184   0.000000000    1   1   0
+H        0.662743889  -0.663017048   0.000000000    1   1   0
+H       -0.905089034  -0.242454521   0.000000000    1   1   0
+LAST_IMAGE
+ATOMIC_POSITIONS (angstrom)
+N        0.000000000   0.000000000   -0.393388867    0   0   1
+H        0.242745664   0.905006184   0.000000000    1   1   0
+H        0.662743889  -0.663017048   0.000000000    1   1   0
+H       -0.905089034  -0.242454521   0.000000000    1   1   0
+END_POSITIONS
+K_POINTS (automatic)
+ 1 1 1 0 0 0
+END_ENGINE_INPUT
+END

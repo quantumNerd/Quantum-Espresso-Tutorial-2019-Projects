@@ -1,0 +1,29 @@
+&control
+    calculation = 'relax'
+    prefix = 'nh3'
+    outdir = './outdir'
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+    etot_conv_thr = 1e-6
+    forc_conv_thr = 1e-5
+/
+&system
+    ibrav=1, celldm(1) =10, 
+    nat=4, ntyp=2,
+    ecutwfc=50
+/
+&electrons
+    conv_thr=1e-8
+/
+&ions
+/
+ATOMIC_SPECIES
+ N  14.0067  N.oncvpsp.upf
+ H  1.00784  H_ONCV_PBE-1.0.oncvpsp.upf
+
+ATOMIC_POSITIONS (angstrom)
+ N 0.0000 0.0000 0.379 0 0 1
+ H 0.4380 0.8250 0.000 1 1 0
+ H 0.4950 -0.792 0.000 1 1 0
+ H -0.934 -0.033 0.000 1 1 0
+K_POINTS (automatic)
+  1 1 1 0 0 0
