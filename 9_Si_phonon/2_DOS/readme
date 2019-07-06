@@ -1,0 +1,15 @@
+
+DFPT calculation by Quantum Espresso
+##################phonon DOS##################
+---->step1: scf calculation
+	pw.x -inp si.1_scf.in > si.1_scf.out
+---->step2: calculation of dynamical matrices on q-vector in reciprocal space
+	ph.x -inp si.2_ph.in > si.2_ph.out
+---->step3: calculation of ineratomic force constants in real space (Fourier transform of the output from step2)
+	q2r.x -inp si.3_q2r.in > si.3_q2r.out
+---->step4: calculation of phonon frequency at any given list of q-vectors (to get DOS or dispersion)
+	matdyn.x -inp si.4_matdyn_1_DOS.in > si.4_matdyn_1_DOS.out
+---->step5: plot DOS using gnuplot
+	gnuplot 'si.5_plot_dos.gnu'
+
+

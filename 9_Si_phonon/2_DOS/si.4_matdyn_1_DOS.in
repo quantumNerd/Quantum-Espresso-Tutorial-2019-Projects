@@ -1,0 +1,8 @@
+&input
+  asr = 'simple'
+  dos = .true.
+  amass(1) = 28.0855
+  flfrc = 'si.k444.fc'
+  fldos = 'si.phdos'
+  nk1=50, nk2=50, nk3=50
+/
