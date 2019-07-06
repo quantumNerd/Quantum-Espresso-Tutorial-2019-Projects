@@ -1,0 +1,10 @@
+phonon calculation at Gamma point.
+&inputph
+  outdir = './outdir'
+  prefix = 'si',
+  tr2_ph = 1.0d-14
+  epsil = .true.
+  amass(1) = 28.0855
+  fildyn = 'si.dyn'
+/
+0 0 0
