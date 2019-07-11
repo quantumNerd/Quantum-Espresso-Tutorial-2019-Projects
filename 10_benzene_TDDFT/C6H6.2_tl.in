@@ -1,0 +1,9 @@
+&LR_INPUT
+  prefix = 'C6H6'
+  outdir = './outdir'
+/
+
+&LR_CONTROL
+  itermax = 500
+  ipol = 4
+/

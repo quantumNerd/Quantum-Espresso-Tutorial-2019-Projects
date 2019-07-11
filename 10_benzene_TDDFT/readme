@@ -1,0 +1,19 @@
+
+download pseudopotential library from http://www.pseudo-dojo.org/index.html
+(NC SR(ONCVPSP v0.4), PBE, stringent, upf
+decompress and set the pseudopotential file accordingly
+
+(because TDDFT package in QE does not support PAW (Carbon in SSSP library)...
+Use NC or USPP!)
+
+######################
+
+(pw.x -inp C6H6.0_relax.in > CH4.0_relax.out)
+
+pw.x -inp C6H6.1_scf.in > CH4.1_scf.out
+
+turbo_lanczos.x -inp C6H6.2_tl.in > CH4.2_tl.out     -------->quite time consuming!
+
+turbo_spectrum.x -inp C6H6.3_ts.in > CH4.3_ts.out
+
+gnuplot "C6H6.4.gnu"

@@ -1,0 +1,13 @@
+&LR_INPUT
+  prefix = 'C6H6'
+  outdir = './outdir'
+  itermax0 = 500
+  itermax = 10000
+  extrapolation = 'osc'
+  epsil = 0.01
+  units = 1
+  start = 0.0
+  end = 50.0
+  increment = 0.01
+  ipol = 4
+/
