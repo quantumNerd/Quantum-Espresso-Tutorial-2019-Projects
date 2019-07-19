@@ -1,0 +1,8 @@
+&inputgipaw
+    job = 'nmr'
+    prefix = 'TMS'
+    tmp_dir = './outdir/'
+    q_gipaw = 0.01
+    spline_ps = .true.
+    use_nmr_macroscopic_shape = .false.
+/

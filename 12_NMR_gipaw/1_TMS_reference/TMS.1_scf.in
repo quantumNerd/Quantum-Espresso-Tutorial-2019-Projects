@@ -1,0 +1,43 @@
+ &CONTROL
+    calculation = 'scf' ,
+    prefix = 'TMS'
+    restart_mode = 'from_scratch' ,
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/q-e-qe-6.4.1_3_Intel/GIPAW/pseudo'
+    tprnfor   = .true.
+    outdir = './outdir'
+ /
+ &SYSTEM
+    ibrav = 1, celldm(1) = 20, nat = 17, ntyp = 3,
+    ecutwfc = 90,
+    nosym = .true. ,
+ /
+ &ELECTRONS
+    conv_thr = 1.D-10 ,
+    mixing_beta = 0.5,
+    diago_thr_init = 1e-4
+ /
+ATOMIC_SPECIES
+    H    1.00000 H.pbe-tm-gipaw.UPF 
+    C    12.0000  C.pbe-tm-gipaw.UPF
+    Si   28.0000  Si.pbe-tm-gipaw.UPF
+ATOMIC_POSITIONS angstrom 
+Si	0.0001	-0.0001	0.0001
+C	-0.9231	-0.1714	-1.6233
+C	0.8883	1.651	0.0427
+C	1.2519	-1.3874	0.1568
+C	-1.2172	-0.0922	1.4236
+H	-1.4495	-1.1294	-1.6692
+H	-1.6598	0.6296	-1.7351
+H	-0.2308	-0.1203	-2.4688
+H	1.6044	1.726	-0.7809
+H	0.1752	2.4758	-0.0476
+H	1.4342	1.772	0.9831
+H	1.8026	-1.3064	1.0986
+H	0.7543	-2.3614	0.134
+H	1.9729	-1.3521	-0.6653
+H	-0.699	0.0058	2.3822
+H	-1.9578	0.7099	1.3513
+H	-1.7473	-1.0491	1.4175
+K_POINTS automatic
+1 1 1 0 0 0
+
