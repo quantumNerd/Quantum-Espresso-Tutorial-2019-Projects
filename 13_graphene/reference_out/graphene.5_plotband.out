@@ -1,0 +1,16 @@
+     Input file > Reading    8 bands at     91 k-points
+Range:  -21.8800   10.6680eV  Emin, Emax > high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   0.0000
+high-symmetry point: -0.3326 0.5760 0.0000   x coordinate   0.6651
+high-symmetry point:  0.0000 0.5760 0.0000   x coordinate   0.9977
+high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   1.5737
+output file (gnuplot/xmgr) > bands in gnuplot/xmgr format written to file graphene.bands.xmgr                                                                                                                                                                                                                                             
+output file (ps) > Efermi > deltaE, reference E (for tics) 
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+   SPLINT WARNING: xfit(i) > xspline(nspline)   1.573725       1.573725    
+bands in PostScript format written to file graphene.bands.ps                                                                                                                                                                                                                                               
