@@ -1,0 +1,40 @@
+&control
+    calculation = 'scf'
+    restart_mode = 'from_scratch'
+    prefix = 'benzene'
+    tstress = .false.
+    tprnfor = .true.
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/q-e-qe-6.4.1_3_Intel/GIPAW/pseudo'
+    outdir = './outdir/'
+/
+&system
+    ibrav = 8
+    celldm(1) =  25, celldm(2) =  1, celldm(3) =  0.5
+    nat = 12, ntyp = 2
+    ecutwfc = 90
+/
+&electrons
+    conv_thr =  1e-10
+    diago_thr_init = 1e-4
+/
+
+ATOMIC_SPECIES
+H    1.00000 H.pbe-tm-gipaw.UPF 
+C    12.0000  C.pbe-tm-gipaw.UPF
+
+ATOMIC_POSITIONS angstrom
+C 0.000000    1.391862    0.000000
+C 1.205388    0.695931    0.000000
+C 1.205388   -0.695931    0.000000
+C 0.000000   -1.391862    0.000000
+C -1.205388   -0.695931    0.000000
+C -1.205388    0.695931    0.000000
+H 0.000000    2.475623    0.000000
+H 2.143952    1.237811    0.000000
+H 2.143952   -1.237811    0.000000
+H 0.000000   -2.475623    0.000000
+H -2.143952   -1.237811    0.000000
+H -2.143952    1.237811    0.000000
+
+K_POINTS automatic
+1 1 1 0 0 0
