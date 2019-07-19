@@ -1,0 +1,35 @@
+&CONTROL
+    calculation='vc-relax'
+    prefix='graphene'
+    restart_mode='from_scratch'
+    outdir='./outdir'
+    pseudo_dir='/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+    forc_conv_thr=1.0d-4
+    etot_conv_thr=1.0d-6
+/
+&SYSTEM
+    ibrav = 12, a = 2.460, b = 2.460, c= 20, cosab=-0.500000,
+    nat = 2, ntyp = 1,
+    ecutwfc = 40.0 ,
+    ecutrho = 400.0 ,
+    occupations = 'smearing', degauss = 0.0001, smearing = 'marzari-vanderbilt'
+/
+&ELECTRONS
+    conv_thr = 1.0d-8,
+    mixing_beta = 0.3,
+/
+&IONS
+    ion_dynamics='bfgs'
+/
+&CELL
+    press_conv_thr = 0.5D0
+    cell_dynamics = bfgs,
+    cell_dofree = '2Dxy'
+/
+ATOMIC_SPECIES
+C 12.0107 C.pbe-n-kjpaw_psl.1.0.0.UPF
+ATOMIC_POSITIONS crystal
+C 0.000000000 0.000000000 0.250000000
+C 0.333333333 0.666666667 0.250000000
+K_POINTS automatic
+12 12 1 0 0 0

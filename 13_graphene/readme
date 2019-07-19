@@ -1,0 +1,16 @@
+STEP 1: vc-relax calculation
+pw.x -inp graphene.1_vc_relax.in > graphene.1_vc_relax.out
+
+STEP 2: scf calculation
+pw.x -inp graphene.2_scf.in > graphene.2_scf.out
+
+(optional: do one nscf calculation to get more precise Fermi energy)
+
+STEP 3: bands calculation (for a given k-path)
+pw.x -inp graphene.3_bands.in > graphene.3_bands.out
+
+STEP 4: bands post-processing
+bands.x -inp graphene.4_bands_pp.in > graphene.4_bands_pp.out
+
+STEP 5: plot band (no mpirun)
+plotband.x < graphene.5_plotband.in > graphene.5_plotband.out

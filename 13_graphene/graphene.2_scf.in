@@ -1,0 +1,29 @@
+&CONTROL
+    calculation='scf'
+    prefix='graphene'
+    restart_mode='from_scratch'
+    outdir='./outdir'
+    pseudo_dir='/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+/
+&SYSTEM
+    ibrav = 0, celldm(1) = 4.64872629
+    nat = 2, ntyp = 1,
+    ecutwfc = 40.0 ,
+    ecutrho = 400.0 ,
+    occupations = 'smearing', degauss = 0.0001, smearing = 'marzari-vanderbilt'
+/
+&ELECTRONS
+    conv_thr = 1.0d-10,
+    mixing_beta = 0.3,
+/
+ATOMIC_SPECIES
+C 12.0107 C.pbe-n-kjpaw_psl.1.0.0.UPF
+CELL_PARAMETERS alat
+   1.002304867   0.000000000   0.000000000
+  -0.501152434   0.868021478   0.000000000
+   0.000000000   0.000000000   8.130081301
+ATOMIC_POSITIONS crystal
+C 0.000000000 0.000000000 0.250000000
+C 0.333333333 0.666666667 0.250000000
+K_POINTS automatic
+12 12 1 0 0 0
