@@ -1,0 +1,32 @@
+&CONTROL
+    calculation='scf'
+    prefix='NiO'
+    restart_mode='from_scratch'
+    outdir='./outdir'
+    pseudo_dir='/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+    tprnfor   = .true.
+/
+&system
+    ibrav = 5, celldm(1) =9.67155, celldm(4)=0.8333333333,
+    nat = 4, ntyp = 3, nspin=2,
+    ecutwfc = 50.0, ecutrho = 500
+    starting_magnetization(1)=  0.2,
+    starting_magnetization(2)= -0.2,
+    tot_magnetization = 0.0
+    nbnd=36,
+ /
+ &electrons
+    mixing_beta = 0.3,
+    conv_thr = 1d-9
+ /
+ATOMIC_SPECIES
+Ni1 58.6934   ni_pbe_v1.4.uspp.F.UPF
+Ni2  58.6934   ni_pbe_v1.4.uspp.F.UPF
+O  15.999   O.pbe-n-kjpaw_psl.0.1.UPF
+ATOMIC_POSITIONS crystal
+Ni1  0.0000000000  0.0000000000  0.0000000000
+Ni2  -.5000000000  1.5000000000  -0.5000000000
+O  0.7500000000  -0.2500000000  -0.2500000000
+O  -0.7500000000  0.2500000000  0.2500000000
+K_POINTS automatic
+4 4 4 0 0 0
