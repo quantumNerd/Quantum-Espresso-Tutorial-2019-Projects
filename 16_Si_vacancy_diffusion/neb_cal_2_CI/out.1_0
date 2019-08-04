@@ -1,0 +1,98 @@
+
+     Program NEB v.6.4.1 starts on  1Aug2019 at 15:31:44 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on    32 processors
+
+     MPI processes distributed on     1 nodes
+     path-images division:  nimage    =       2
+     R & G space division:  proc/nbgrp/npool/nimage =      16
+
+     parsing_file_name: si.supercell_3_neb.in
+     Reading input from pw_1.in
+Warning: card &IONS ignored
+Warning: card / ignored
+     Reading input from pw_2.in
+Warning: card &IONS ignored
+Warning: card / ignored
+     cpu =  1   tcpu =      2.1    self-consistency for image   3
+     cpu =  1   tcpu =    410.3    self-consistency for image   5
+     cpu =  1   tcpu =    828.8    self-consistency for image   7
+     cpu =  1   tcpu =   1423.9    self-consistency for image   9
+     cpu =  1   tcpu =   1884.7    self-consistency for image   3
+     cpu =  1   tcpu =   2181.8    self-consistency for image   5
+     cpu =  1   tcpu =   2532.3    self-consistency for image   7
+     cpu =  1   tcpu =   2828.1    self-consistency for image   9
+     cpu =  1   tcpu =   3103.6    self-consistency for image   3
+     cpu =  1   tcpu =   3439.8    self-consistency for image   5
+     cpu =  1   tcpu =   3878.4    self-consistency for image   7
+     cpu =  1   tcpu =   4233.6    self-consistency for image   9
+     cpu =  1   tcpu =   4592.3    self-consistency for image   3
+     cpu =  1   tcpu =   4868.9    self-consistency for image   5
+     cpu =  1   tcpu =   5182.9    self-consistency for image   7
+     cpu =  1   tcpu =   5448.4    self-consistency for image   9
+     cpu =  1   tcpu =   5832.4    self-consistency for image   3
+     cpu =  1   tcpu =   6205.8    self-consistency for image   5
+     cpu =  1   tcpu =   6646.5    self-consistency for image   7
+     cpu =  1   tcpu =   7425.5    self-consistency for image   9
+     cpu =  1   tcpu =   7803.0    self-consistency for image   3
+     cpu =  1   tcpu =   8130.7    self-consistency for image   5
+     cpu =  1   tcpu =   8530.5    self-consistency for image   7
+     cpu =  1   tcpu =   8876.9    self-consistency for image   9
+     cpu =  1   tcpu =   9260.9    self-consistency for image   3
+     cpu =  1   tcpu =   9541.9    self-consistency for image   5
+     cpu =  1   tcpu =   9846.4    self-consistency for image   7
+     cpu =  1   tcpu =  10164.2    self-consistency for image   9
+     cpu =  1   tcpu =  10511.8    self-consistency for image   3
+     cpu =  1   tcpu =  10852.7    self-consistency for image   5
+     cpu =  1   tcpu =  11213.0    self-consistency for image   7
+     cpu =  1   tcpu =  11532.9    self-consistency for image   9
+     cpu =  1   tcpu =  11854.6    self-consistency for image   3
+     cpu =  1   tcpu =  12175.4    self-consistency for image   5
+     cpu =  1   tcpu =  12496.0    self-consistency for image   7
+     cpu =  1   tcpu =  12810.9    self-consistency for image   9
+     cpu =  1   tcpu =  13072.9    self-consistency for image   3
+     cpu =  1   tcpu =  13437.2    self-consistency for image   5
+     cpu =  1   tcpu =  13800.0    self-consistency for image   7
+     cpu =  1   tcpu =  14176.5    self-consistency for image   9
+     cpu =  1   tcpu =  14478.8    self-consistency for image   3
+     cpu =  1   tcpu =  14717.5    self-consistency for image   5
+     cpu =  1   tcpu =  15043.9    self-consistency for image   7
+     cpu =  1   tcpu =  15361.5    self-consistency for image   9
+     cpu =  1   tcpu =  15613.3    self-consistency for image   3
+     cpu =  1   tcpu =  15937.6    self-consistency for image   5
+     cpu =  1   tcpu =  16277.8    self-consistency for image   7
+     cpu =  1   tcpu =  17403.0    self-consistency for image   9
+     cpu =  1   tcpu =  17683.4    self-consistency for image   3
+     cpu =  1   tcpu =  18052.6    self-consistency for image   5
+     cpu =  1   tcpu =  18601.8    self-consistency for image   7
+     cpu =  1   tcpu =  19423.4    self-consistency for image   9
+     cpu =  1   tcpu =  19754.7    self-consistency for image   3
+     cpu =  1   tcpu =  20070.3    self-consistency for image   5
+     cpu =  1   tcpu =  20412.9    self-consistency for image   7
+     cpu =  1   tcpu =  20805.5    self-consistency for image   9
+     cpu =  1   tcpu =  21137.9    self-consistency for image   3
+     cpu =  1   tcpu =  21473.9    self-consistency for image   5
+     cpu =  1   tcpu =  21820.3    self-consistency for image   7
+     cpu =  1   tcpu =  22200.8    self-consistency for image   9
+     cpu =  1   tcpu =  22561.7    self-consistency for image   3
+     cpu =  1   tcpu =  22882.9    self-consistency for image   5
+     cpu =  1   tcpu =  23224.1    self-consistency for image   7
+     cpu =  1   tcpu =  23610.4    self-consistency for image   9
+     cpu =  1   tcpu =  23937.6    self-consistency for image   3
+     cpu =  1   tcpu =  24174.0    self-consistency for image   5
+     cpu =  1   tcpu =  24424.6    self-consistency for image   7
+     cpu =  1   tcpu =  24697.6    self-consistency for image   9
+     cpu =  1   tcpu =  25139.8    self-consistency for image   3
+     cpu =  1   tcpu =  25443.1    self-consistency for image   5
+     cpu =  1   tcpu =  25800.4    self-consistency for image   7
+     cpu =  1   tcpu =  26125.0    self-consistency for image   9
+     NEB          :      6h57m CPU      7h22m WALL
+

@@ -1,0 +1,10 @@
+ &PATH
+ restart_mode      = 'restart'
+ string_method     = 'neb',
+ nstep_path        = 150,
+ ds                = 1.D0,
+ opt_scheme        = "broyden",
+ num_of_images     = 10,
+ CI_scheme         = 'auto',
+ path_thr          = 0.05D0,
+ /
