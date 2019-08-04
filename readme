@@ -1,0 +1,17 @@
+###calculation of the energy barrier of single vacancy migration/diffusion in Si crystal using neb.x
+
+###reference: 0.3~0.45eV (experiments and previous calculations)
+
+step 0:
+construct a 2by2by2 supercell
+take one atom away, relax (as first image in step 1)
+take another atom (neighboring) away instead (as last image in step 1)
+
+step 1:
+neb.x calculation without climbing image (CI)
+-> result: 0.292768 eV
+
+step 2:
+refine the calculation with CI
+-> result: 0.2892 eV
+
