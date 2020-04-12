@@ -1,0 +1,10 @@
+phonons (vibrational modes) of H2O
+ &inputph
+  outdir='./outdir',
+  prefix='h2o',
+  amass(1)=1.00784,
+  amass(2)=15.999,
+  fildyn='h2o.dynG',
+  trans= .true.
+ /
+0.0 0.0 0.0
