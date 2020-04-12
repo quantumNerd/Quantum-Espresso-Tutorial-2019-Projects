@@ -1,0 +1,12 @@
+&inputpp
+    prefix = 'si' ,
+    fileout = 'si.axsf' ,
+    lcharge = .FALSE.        
+    lforces = .FALSE.        
+    ldynamics = .true.     ! enerate a trajectory file for XCrysDen 
+    nframes = 300          ! number of frames (=nstep/iprint) 
+    nsp = 1                ! number of types of atoms
+    nat(1) = 8             ! number of atoms for each type
+    species(1) = 14        ! label the atom as Si for XCrysDen
+/
+

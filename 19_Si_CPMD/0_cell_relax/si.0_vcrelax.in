@@ -1,0 +1,38 @@
+&control
+    calculation = 'vc-relax'
+    prefix = 'si'
+    outdir = './outdir'
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+    etot_conv_thr = 1e-5
+    forc_conv_thr = 1e-4
+/
+&system
+    ibrav=8, celldm(1)=10.410909236, celldm(2) = 1, celldm(3) = 1
+    nat=8, ntyp=1,
+    ecutwfc=50, ecutrho=300
+/
+&electrons
+    conv_thr=1e-8
+/
+&ions
+/
+&cell
+    cell_dofree='all'
+/
+ATOMIC_SPECIES
+ Si  28.0855  Si.pbe-n-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (crystal)
+  Si     0.0000    0.0000    0.0000  1 1 1 
+  Si     0.0000    0.5000    0.5000  1 1 1 
+  Si     0.5000    0.5000    0.0000  1 1 1 
+  Si     0.5000    0.0000    0.5000  1 1 1 
+  Si     0.2500    0.2500    0.2500  1 1 1 
+  Si     0.2500    0.7500    0.7500  1 1 1 
+  Si     0.7500    0.7500    0.2500  1 1 1 
+  Si     0.7500    0.2500    0.7500  1 1 1
+K_POINTS (automatic)
+ 1 1 1 0 0 0
+
+
+

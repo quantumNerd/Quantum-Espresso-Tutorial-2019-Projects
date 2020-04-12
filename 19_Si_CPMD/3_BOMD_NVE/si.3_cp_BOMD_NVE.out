@@ -1,0 +1,2443 @@
+
+     Program CP v.6.4.1 starts on 11Apr2020 at 22:52:20 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     2 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       2
+     Waiting for input...
+     Reading input from standard input
+
+   Job Title: MD Simulation
+
+
+   Atomic Pseudopotentials Parameters
+   ----------------------------------
+
+   Reading pseudopotential for specie #  1 from file :
+   /home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos/Si.pbe-n-rrkjus_psl.1.0.0.UPF
+   file type is UPF v.2
+
+
+   Main Simulation Parameters (from input)
+   ---------------------------------------
+   Restart Mode       =       0   reset_counters 
+   Number of MD Steps =     200
+   Print out every            1 MD Steps
+   Reads from unit    =      51
+   Writes to unit     =      52
+   MD Simulation time step            =      40.00
+   Electronic fictitious mass (emass) =     400.00
+   emass cut-off                      =       2.50
+
+   Simulation Cell Parameters (from input)
+   external pressure       =            0.00 [KBar]
+   wmass (calculated)      =        31123.88 [AU]
+   ibrav =    8
+   alat  =    10.64076206
+   a1    =    10.64076206    0.00000000    0.00000000
+   a2    =     0.00000000   10.64076206    0.00000000
+   a3    =     0.00000000    0.00000000   10.64076206
+ 
+   b1    =     0.09397823    0.00000000    0.00000000
+   b2    =     0.00000000    0.09397823    0.00000000
+   b3    =     0.00000000    0.00000000    0.09397823
+   omega =    1204.80898162
+
+    ========================================
+    |  CONJUGATE GRADIENT                  |
+    ========================================
+    | iterations   =           100         |
+    | conv_thr     = 0.00000100000 a.u.    |
+    | passop       =       0.30000 a.u.    |
+    | niter_cg_restart =  20      |
+    ========================================
+
+   Energy Cut-offs
+   ---------------
+   Ecutwfc =   50.0 Ry,      Ecutrho =  400.0 Ry,      Ecuts =  200.0 Ry
+   Gcutwfc =   12.0     ,    Gcutrho =   33.9          Gcuts =   24.0
+   NOTA BENE: refg, mmx =   0.050000  9600
+   Orthog. with Gram-Schmidt
+   Electron dynamics with conjugate gradient
+   Electron dynamics : the temperature is not controlled
+
+   Electronic states
+   -----------------
+   Number of Electrons=    32, of States =    16
+   Occupation numbers :
+   2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00
+   2.00 2.00 2.00 2.00 2.00 2.00
+
+
+   Exchange and correlations functionals
+   -------------------------------------
+     Exchange-correlation      = PBE ( 1  4  3  4 0 0)
+
+
+   Ions Simulation Parameters
+   --------------------------
+   Ions are allowed to move
+   Ions dynamics with newton equations
+   the temperature is computed for    24 degrees of freedom
+   ion dynamics with fricp =  0.0000 and greasp =  1.0000
+   Zero initial momentum for ions
+   Ionic position (from input)
+   sorted by specie, and converted to real a.u. coordinates
+   Species   1 atoms =    8 mass =     51196.73 (a.u.),        28.09 (amu) rcmax =   0.50 (a.u.)
+        0.000000     0.000000     0.000000
+        0.000000     5.320381     5.320381
+        5.320381     5.320381     0.000000
+        5.320381     0.000000     5.320381
+        2.660191     2.660191     2.660191
+        2.660191     7.980572     7.980572
+        7.980572     7.980572     2.660191
+        7.980572     2.660191     7.980572
+   Ionic position will be re-read from restart file
+
+   All atoms are allowed to move
+   Ionic temperature is not controlled
+
+
+   Cell Dynamics Parameters (from STDIN)
+   -------------------------------------
+   Starting cell generated from CELLDM
+   Cell parameters will be re-read from restart file
+   Constant VOLUME Molecular dynamics
+   cell parameters are not allowed to move
+
+   Verbosity: iverbosity =  0
+
+
+
+   Simulation dimensions initialization
+   ------------------------------------
+
+   unit vectors of full simulation cell
+   in real space:                         in reciprocal space (units 2pi/alat):
+   1    10.6408    0.0000    0.0000              1.0000    0.0000    0.0000
+   2     0.0000   10.6408    0.0000              0.0000    1.0000    0.0000
+   3     0.0000    0.0000   10.6408              0.0000    0.0000    1.0000
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        1795     894    218                81445    28774    3558
+     Max        1798     895    219                81446    28781    3565
+     Sum        3593    1789    437               162891    57555    7123
+ 
+ 
+   Real Mesh
+   ---------
+   Global Dimensions   Local  Dimensions   Processor Grid
+   .X.   .Y.   .Z.     .X.   .Y.   .Z.     .X.   .Y.   .Z.
+    72    72    72      72    72    36       1     1     2
+   Array leading dimensions ( nr1x, nr2x, nr3x )   =     72    72    72
+   Local number of cell to store the grid ( nrxx ) =     186624
+   Number of x-y planes for each processors: 
+  |  72,  36  |  72,  36  |
+ 
+   Smooth Real Mesh
+   ----------------
+   Global Dimensions   Local  Dimensions   Processor Grid
+   .X.   .Y.   .Z.     .X.   .Y.   .Z.     .X.   .Y.   .Z.
+    48    48    48      48    48    24       1     1     2
+   Array leading dimensions ( nr1x, nr2x, nr3x )   =     48    48    48
+   Local number of cell to store the grid ( nrxx ) =      55296
+   Number of x-y planes for each processors: 
+  |  48,  24  |  48,  24  |
+ 
+   Small Box Real Mesh
+   -------------------
+   Global Dimensions   Local  Dimensions   Processor Grid
+   .X.   .Y.   .Z.     .X.   .Y.   .Z.     .X.   .Y.   .Z.
+    20    20    20      20    20    20       1     1     1
+   Array leading dimensions ( nr1x, nr2x, nr3x )   =     20    20    20
+   Local number of cell to store the grid ( nrxx ) =       8000
+ 
+   unit vectors of box grid cell
+   in real space:                         in reciprocal space:
+       2.9558    0.0000    0.0000              1.0000    0.0000    0.0000
+       0.0000    2.9558    0.0000              0.0000    1.0000    0.0000
+       0.0000    0.0000    2.9558              0.0000    0.0000    1.0000
+ 
+   Reciprocal Space Mesh
+   ---------------------
+   Large Mesh
+     Global(ngm_g)    MinLocal       MaxLocal      Average
+          81446          40723          40723       40723.00
+   Smooth Mesh
+     Global(ngms_g)   MinLocal       MaxLocal      Average
+          28778          14387          14391       14389.00
+   Wave function Mesh
+     Global(ngw_g)    MinLocal       MaxLocal      Average
+           3562           1779           1783        1781.00
+
+   Small box Mesh
+   ngb =         1716 not distributed to processors
+
+
+   System geometry initialization
+   ------------------------------
+   cell parameters read from restart file
+   ibrav =    8       cell parameters 
+
+
+   cell at current step : h(t)
+      10.64076       0.00000       0.00000
+       0.00000      10.64076       0.00000
+       0.00000       0.00000      10.64076
+
+   cell at previous step : h(t-dt)
+      10.64076       0.00000       0.00000
+       0.00000      10.64076       0.00000
+       0.00000       0.00000      10.64076
+ 
+ 
+   unit vectors of box grid cell
+   in real space:                         in reciprocal space:
+       2.9558    0.0000    0.0000              1.0000    0.0000    0.0000
+       0.0000    2.9558    0.0000              0.0000    1.0000    0.0000
+       0.0000    0.0000    2.9558              0.0000    0.0000    1.0000
+
+   Matrix Multiplication Performances
+   ortho mmul, time for parallel driver      =   0.00000 with    1 procs
+
+   Constraints matrixes will be distributed block like on
+   ortho sub-group =    1*   1 procs
+
+
+
+   Pseudopotentials initialization
+   -------------------------------
+  nlinit  nh(is), ngb, is, kkbeta, lmaxq =           18        1716           1
+         829           5
+ 
+                        qqq 
+  -0.0772  -0.0666   0.0000   0.0000   0.0000   0.0000
+  -0.0666  -0.0419   0.0000   0.0000   0.0000   0.0000
+   0.0000   0.0000  -0.0095  -0.0249   0.0000   0.0000
+   0.0000   0.0000  -0.0249  -0.0561   0.0000   0.0000
+   0.0000   0.0000   0.0000   0.0000   0.0059   0.0065
+   0.0000   0.0000   0.0000   0.0000   0.0065   0.0070
+ 
+
+
+   Common initialization
+
+   Specie:     1
+   1  indv=  1   ang. mom=  0
+   2  indv=  2   ang. mom=  0
+   3  indv=  3   ang. mom=  1
+   4  indv=  3   ang. mom=  1
+   5  indv=  3   ang. mom=  1
+   6  indv=  4   ang. mom=  1
+   7  indv=  4   ang. mom=  1
+   8  indv=  4   ang. mom=  1
+   9  indv=  5   ang. mom=  2
+  10  indv=  5   ang. mom=  2
+  11  indv=  5   ang. mom=  2
+  12  indv=  5   ang. mom=  2
+  13  indv=  5   ang. mom=  2
+  14  indv=  6   ang. mom=  2
+  15  indv=  6   ang. mom=  2
+  16  indv=  6   ang. mom=  2
+  17  indv=  6   ang. mom=  2
+  18  indv=  6   ang. mom=  2
+ 
+                        dion 
+   0.2480   0.2226   0.0000   0.0000   0.0000   0.0000
+   0.2226   0.5178   0.0000   0.0000   0.0000   0.0000
+   0.0000   0.0000   0.0832   0.0571   0.0000   0.0000
+   0.0000   0.0000   0.0571   0.1029   0.0000   0.0000
+   0.0000   0.0000   0.0000   0.0000  -0.0224  -0.0221
+   0.0000   0.0000   0.0000   0.0000  -0.0221  -0.0218
+
+   Cell parameters from input file are used in electron mass preconditioning
+   init_tpiba2=    0.34866975
+ 
+   Short Legend and Physical Units in the Output
+   ---------------------------------------------
+   NFI    [int]          - step index
+   EKINC  [HARTREE A.U.] - kinetic energy of the fictitious electronic dynamics
+   TEMPH  [K]            - Temperature of the fictitious cell dynamics
+   TEMP   [K]            - Ionic temperature
+   ETOT   [HARTREE A.U.] - Scf total energy (Kohn-Sham hamiltonian)
+   ENTHAL [HARTREE A.U.] - Enthalpy ( ETOT + P * V )
+   ECONS  [HARTREE A.U.] - Enthalpy + kinetic energy of ions and cell
+   ECONT  [HARTREE A.U.] - Constant of motion for the CP lagrangian
+ 
+ Ionic velocities set to zero
+ Electronic velocities set to zero
+
+   formf: eself=   102.12922
+   formf:     vps(g=0)=   0.0063764     rhops(g=0)=  -0.0033200
+   formf:     vps(g=0)=   0.0061714     rhops(g=0)=  -0.0032485
+   formf:     vps(g=0)=   0.0061714     rhops(g=0)=  -0.0032485
+   formf:     vps(g=0)=   0.0061714     rhops(g=0)=  -0.0032485
+   formf:     vps(g=0)=   0.0059723     rhops(g=0)=  -0.0031784
+   formf: sum_g vps(g)=   2.4285170 sum_g rhops(g)=  -2.8750097
+   Delta V(G=0):   0.020860Ry,    0.567639eV
+ PERFORMING CONJUGATE GRADIENT MINIMIZATION OF EL. STATES
+NOTE: eigenvalues are not computed without ortho
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     1       0    -45.333245    -45.333245    -45.333245     6
+ PERFORMING CONJUGATE GRADIENT MINIMIZATION OF EL. STATES
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     2       0    -45.333246    -45.333246    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     3       0    -45.333249    -45.333249    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     4       0    -45.333254    -45.333254    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     5       0    -45.333259    -45.333259    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     6       0    -45.333266    -45.333266    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     7       0    -45.333274    -45.333274    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     8       0    -45.333282    -45.333282    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     9       1    -45.333290    -45.333290    -45.333243     6
+
+ * Physical Quantities at step:    10
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33329923340 Hartree a.u.
+              kinetic energy =       12.47653 Hartree a.u.
+        electrostatic energy =      -41.31440 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12725 Hartree a.u.
+  n-l pseudopotential energy =        4.92050 Hartree a.u.
+ exchange-correlation energy =      -24.54318 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.10829257597209E-01     0.46230314983111E-02     0.61000985143474E-02
+   Si      0.51741428692958E-03     0.53204244549996E+01     0.53085213038509E+01
+   Si      0.53224982791537E+01     0.53172162133300E+01    -0.13326001153163E-01
+   Si      0.53253760720048E+01     0.62485189235762E-03     0.53160410604035E+01
+   Si      0.26695373764117E+01     0.26586442400930E+01     0.26570980470636E+01
+   Si      0.26501727715455E+01     0.79809120668976E+01     0.79712534705713E+01
+   Si      0.79782001578384E+01     0.79760646697730E+01     0.26617798135468E+01
+   Si      0.79941566646182E+01     0.26669950820382E+01     0.79735431655407E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.14273966506495E-04    -0.10232707455312E-04    -0.95360131082243E-05
+   Si      0.72749048358362E-05     0.53656657984810E-05     0.25547477451065E-05
+   Si     -0.95223487216610E-05     0.10559054957358E-04     0.35792459800735E-05
+   Si     -0.73257100067910E-05    -0.78507475859723E-05     0.12137831523927E-04
+   Si      0.96933259890447E-06     0.11552877741317E-04     0.38263139796378E-05
+   Si      0.14862427071604E-04    -0.60092357644130E-05     0.33979533383301E-05
+   Si      0.10686340467059E-04     0.10114143406649E-04    -0.20376823684962E-04
+   Si     -0.26709797384412E-05    -0.13499051098129E-04     0.44167442260040E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.50E+00     1.0745E-05
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    10       1    -45.333299    -45.333299    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    11       1    -45.333309    -45.333309    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    12       2    -45.333317    -45.333317    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    13       2    -45.333324    -45.333324    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    14       2    -45.333331    -45.333331    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    15       2    -45.333339    -45.333339    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    16       2    -45.333343    -45.333343    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    17       2    -45.333346    -45.333346    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    18       2    -45.333346    -45.333346    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    19       2    -45.333345    -45.333345    -45.333243     6
+
+ * Physical Quantities at step:    20
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33334390523 Hartree a.u.
+              kinetic energy =       12.47660 Hartree a.u.
+        electrostatic energy =      -41.31443 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12724 Hartree a.u.
+  n-l pseudopotential energy =        4.92047 Hartree a.u.
+ exchange-correlation energy =      -24.54323 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.38367619371089E-02    -0.10951444989876E-02    -0.62053132630114E-04
+   Si      0.27785681688423E-02     0.53209693604235E+01     0.53097818031408E+01
+   Si      0.53188257470320E+01     0.53228580213662E+01    -0.11498875343838E-01
+   Si      0.53218940356181E+01    -0.16635844043376E-02     0.53221043329016E+01
+   Si      0.26697174580597E+01     0.26635721195244E+01     0.26590177684824E+01
+   Si      0.26586009122795E+01     0.79794448853586E+01     0.79730594054234E+01
+   Si      0.79833898883757E+01     0.79819121864152E+01     0.26523973057032E+01
+   Si      0.79922446219854E+01     0.26595067663375E+01     0.79762112711631E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.18680298567469E-04    -0.15397898066349E-04    -0.20443024622002E-04
+   Si      0.44554778357664E-05    -0.16814679569778E-05     0.38347716288885E-05
+   Si     -0.36567024649196E-05     0.13492468146835E-04     0.53775571570407E-05
+   Si     -0.89216144494895E-05    -0.90845481934813E-06     0.14001066222620E-04
+   Si     -0.15476854454133E-05     0.97473789860441E-05     0.55445572623577E-05
+   Si      0.25863803008419E-04     0.79951006677564E-06     0.60303488323484E-05
+   Si      0.10168414721374E-04     0.15931742178870E-04    -0.23028044241328E-04
+   Si     -0.76813946382712E-05    -0.21983278535784E-04     0.86827677601287E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   2.61E+00     1.3261E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    20       2    -45.333344    -45.333344    -45.333245     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.02s CPU      0.03s WALL (       1 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    21       2    -45.333339    -45.333339    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    22       2    -45.333334    -45.333334    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    23       2    -45.333328    -45.333328    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    24       2    -45.333322    -45.333322    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    25       1    -45.333317    -45.333317    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    26       1    -45.333313    -45.333313    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    27       1    -45.333307    -45.333307    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    28       1    -45.333303    -45.333303    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    29       1    -45.333300    -45.333300    -45.333249     6
+
+ * Physical Quantities at step:    30
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33329762247 Hartree a.u.
+              kinetic energy =       12.47669 Hartree a.u.
+        electrostatic energy =      -41.31452 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12728 Hartree a.u.
+  n-l pseudopotential energy =        4.92051 Hartree a.u.
+ exchange-correlation energy =      -24.54326 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si     -0.19165501325130E-02    -0.51948673704153E-02    -0.74105639127314E-02
+   Si      0.43125341790711E-02     0.53199720553476E+01     0.53117640945805E+01
+   Si      0.53208939059652E+01     0.53263183398002E+01    -0.90815401568885E-02
+   Si      0.53200875823724E+01    -0.45329490385840E-03     0.53247117741907E+01
+   Si      0.26676778874170E+01     0.26652854221701E+01     0.26606637668870E+01
+   Si      0.26675962598273E+01     0.79809571068345E+01     0.79759663544131E+01
+   Si      0.79851386495952E+01     0.79862407259498E+01     0.26442827180598E+01
+   Si      0.79874977242328E+01     0.26523791226942E+01     0.79801143542766E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.52073769625889E-05    -0.46888217356195E-05    -0.15564923860971E-04
+   Si      0.24292289594407E-05     0.69262727629746E-06     0.68428099245121E-05
+   Si      0.11957621485652E-04     0.31905199755832E-05     0.76213484988195E-05
+   Si      0.35950156090612E-05     0.70040848963664E-05    -0.11809448383693E-05
+   Si     -0.98828318990181E-05    -0.18449909171172E-05    -0.81668691736287E-06
+   Si      0.15997980699425E-04     0.32089859477951E-05     0.83343554444628E-05
+   Si     -0.22313916155094E-05     0.53363819367720E-05    -0.16190167625403E-04
+   Si     -0.16658246276403E-04    -0.12898787380054E-04     0.10954209374347E-04
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.29E+00     3.2912E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    30       1    -45.333298    -45.333298    -45.333249     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    31       1    -45.333297    -45.333297    -45.333249     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    32       1    -45.333297    -45.333297    -45.333249     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    33       1    -45.333296    -45.333296    -45.333250     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    34       1    -45.333295    -45.333295    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    35       1    -45.333296    -45.333296    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    36       1    -45.333298    -45.333298    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    37       1    -45.333301    -45.333301    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    38       1    -45.333305    -45.333305    -45.333248     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    39       1    -45.333306    -45.333306    -45.333247     6
+
+ * Physical Quantities at step:    40
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33330845736 Hartree a.u.
+              kinetic energy =       12.47664 Hartree a.u.
+        electrostatic energy =      -41.31449 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12727 Hartree a.u.
+  n-l pseudopotential energy =        4.92051 Hartree a.u.
+ exchange-correlation energy =      -24.54324 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.91274140581065E-03    -0.41533137524555E-02    -0.12240871918590E-01
+   Si      0.44350144432996E-02     0.53215161578149E+01     0.53157184721979E+01
+   Si      0.53261548257030E+01     0.53254498591648E+01    -0.48512032167419E-02
+   Si      0.53231079233557E+01     0.19190852284681E-02     0.53210655845362E+01
+   Si      0.26623348528717E+01     0.26628017155136E+01     0.26588814540425E+01
+   Si      0.26718824129259E+01     0.79807249055152E+01     0.79797152348229E+01
+   Si      0.79827253795845E+01     0.79869381677069E+01     0.26401304762002E+01
+   Si      0.79797348431665E+01     0.26503080333306E+01     0.79825918116737E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.16578920193053E-04     0.10233581100901E-04    -0.88601936525238E-05
+   Si     -0.25620029289567E-05     0.41674011226849E-05     0.12839921435265E-04
+   Si      0.13210640892255E-04    -0.75478346985679E-05     0.13502648686340E-04
+   Si      0.85526453796049E-05     0.28094376228729E-05    -0.17367376279156E-04
+   Si     -0.15774806105400E-04    -0.91631654355339E-05    -0.46798457469135E-05
+   Si      0.67234290423865E-05    -0.35326526149374E-05     0.10081153005958E-04
+   Si     -0.78228077505503E-05    -0.68189743796342E-06    -0.43953345481269E-05
+   Si     -0.18906018722367E-04     0.37151303404984E-05    -0.11209729008488E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.62E+00     4.2306E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    40       1    -45.333308    -45.333308    -45.333247     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.04s CPU      0.06s WALL (       2 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    41       1    -45.333308    -45.333308    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    42       1    -45.333308    -45.333308    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    43       1    -45.333311    -45.333311    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    44       1    -45.333310    -45.333310    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    45       1    -45.333311    -45.333311    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    46       1    -45.333313    -45.333313    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    47       1    -45.333314    -45.333314    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    48       1    -45.333312    -45.333312    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    49       1    -45.333310    -45.333310    -45.333239     6
+
+ * Physical Quantities at step:    50
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33330677140 Hartree a.u.
+              kinetic energy =       12.47654 Hartree a.u.
+        electrostatic energy =      -41.31439 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12724 Hartree a.u.
+  n-l pseudopotential energy =        4.92049 Hartree a.u.
+ exchange-correlation energy =      -24.54319 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.76632299057761E-02     0.19726679226417E-02    -0.14667756283881E-01
+   Si      0.15563702471193E-02     0.53226221233919E+01     0.53216577015866E+01
+   Si      0.53299299339260E+01     0.53198137405804E+01     0.13478526473844E-02
+   Si      0.53257188408597E+01     0.12271267622132E-02     0.53135934831205E+01
+   Si      0.26569306274572E+01     0.26585822169650E+01     0.26574262087371E+01
+   Si      0.26738910687496E+01     0.79802425798414E+01     0.79820262510491E+01
+   Si      0.79802035250979E+01     0.79857897821402E+01     0.26405502900217E+01
+   Si      0.79753943972131E+01     0.26552543729183E+01     0.79790769274595E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.14818959781809E-04     0.16406069278842E-04    -0.30920951026252E-05
+   Si     -0.13168584047898E-04     0.64040123553294E-06     0.15003883981477E-04
+   Si      0.34684659665296E-05    -0.19863417881896E-04     0.14697694646753E-04
+   Si      0.28317430621874E-05    -0.68149995531807E-05    -0.18632990463394E-04
+   Si     -0.77909114941545E-05    -0.79635118573333E-05    -0.12689382108325E-05
+   Si      0.36847002173365E-05     0.27911692746187E-05    -0.93259432394620E-06
+   Si     -0.10815569415988E-05    -0.50743516447422E-05     0.66961876907454E-05
+   Si     -0.27628165443027E-05     0.19878641148040E-04    -0.12471148218143E-04
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.82E+00     4.3322E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    50       1    -45.333307    -45.333307    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    51       1    -45.333305    -45.333305    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    52       1    -45.333304    -45.333304    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    53       1    -45.333307    -45.333307    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    54       1    -45.333303    -45.333303    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    55       1    -45.333301    -45.333301    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    56       1    -45.333299    -45.333299    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    57       1    -45.333297    -45.333297    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    58       1    -45.333293    -45.333293    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    59       1    -45.333291    -45.333291    -45.333236     6
+
+ * Physical Quantities at step:    60
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33328957882 Hartree a.u.
+              kinetic energy =       12.47648 Hartree a.u.
+        electrostatic energy =      -41.31436 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12724 Hartree a.u.
+  n-l pseudopotential energy =        4.92050 Hartree a.u.
+ exchange-correlation energy =      -24.54315 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.11682169312218E-01     0.68649423738222E-02    -0.14930306512658E-01
+   Si     -0.43841666863251E-02     0.53221006941357E+01     0.53253315497260E+01
+   Si      0.53283044796479E+01     0.53127988497758E+01     0.51759491917452E-02
+   Si      0.53249088971556E+01    -0.19446006037903E-02     0.53067289346857E+01
+   Si      0.26562285403137E+01     0.26576666899953E+01     0.26586455524105E+01
+   Si      0.26749176330143E+01     0.79808430809071E+01     0.79794516179476E+01
+   Si      0.79825004530426E+01     0.79827650512353E+01     0.26454880777216E+01
+   Si      0.79771299876565E+01     0.26644099027028E+01     0.79751195831677E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.50345227208468E-05     0.84047365782490E-05     0.11782996615995E-05
+   Si     -0.12386055701994E-04    -0.18388056870127E-05     0.25911809848235E-05
+   Si     -0.10810078122134E-04    -0.13813328314758E-04     0.38389410308315E-05
+   Si     -0.63652909282382E-05    -0.43278895440625E-05    -0.15435931705423E-04
+   Si      0.34445128251110E-05     0.35454503531804E-05     0.73566889012018E-05
+   Si      0.15069219528008E-05    -0.28485615722986E-05    -0.88808382927364E-05
+   Si      0.88250385132259E-05    -0.99246073191847E-05     0.16776798930329E-04
+   Si      0.10750428740345E-04     0.20803005505889E-04    -0.74251395106404E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.42E+00     3.9805E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    60       1    -45.333290    -45.333290    -45.333236     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.06s CPU      0.09s WALL (       3 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    61       1    -45.333289    -45.333289    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    62       1    -45.333287    -45.333287    -45.333235     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    63       1    -45.333287    -45.333287    -45.333235     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    64       1    -45.333287    -45.333287    -45.333235     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    65       1    -45.333287    -45.333287    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    66       1    -45.333286    -45.333286    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    67       1    -45.333285    -45.333285    -45.333237     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    68       1    -45.333284    -45.333284    -45.333237     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    69       1    -45.333281    -45.333281    -45.333236     6
+
+ * Physical Quantities at step:    70
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33327941030 Hartree a.u.
+              kinetic energy =       12.47650 Hartree a.u.
+        electrostatic energy =      -41.31438 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12725 Hartree a.u.
+  n-l pseudopotential energy =        4.92051 Hartree a.u.
+ exchange-correlation energy =      -24.54316 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.11849365051283E-01     0.84193589503805E-02    -0.13711360829829E-01
+   Si     -0.69244863380648E-02     0.53212041308024E+01     0.53237886254514E+01
+   Si      0.53221489611743E+01     0.53091446030939E+01     0.43604332414604E-02
+   Si      0.53215031055640E+01    -0.18284594316324E-02     0.53017160156140E+01
+   Si      0.26589573023197E+01     0.26608879601712E+01     0.26622314246187E+01
+   Si      0.26747618662923E+01     0.79795956725774E+01     0.79766764186752E+01
+   Si      0.79863232232919E+01     0.79783799964745E+01     0.26529101677816E+01
+   Si      0.79826686561011E+01     0.26697013478839E+01     0.79730392337854E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.31939179511674E-05    -0.11917072603730E-05     0.56910237441857E-05
+   Si      0.16233339788713E-05    -0.32181831177105E-05    -0.92421613394187E-05
+   Si     -0.17969976733089E-04    -0.40120111058454E-05    -0.68327194916297E-05
+   Si     -0.89901436640690E-05     0.46564836790773E-05    -0.81119907694036E-05
+   Si      0.93817214018623E-05     0.97924519751121E-05     0.65069011885620E-05
+   Si     -0.27753349781751E-05    -0.18397537871041E-05    -0.48005320678780E-05
+   Si      0.95277695852732E-05    -0.86706823380192E-05     0.19514480304459E-04
+   Si      0.12396548360425E-04     0.44834019547427E-05    -0.27250015688172E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.13E+00     3.3904E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    70       1    -45.333279    -45.333279    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    71       1    -45.333278    -45.333278    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    72       1    -45.333278    -45.333278    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    73       1    -45.333277    -45.333277    -45.333236     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    74       1    -45.333277    -45.333277    -45.333237     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    75       1    -45.333276    -45.333276    -45.333237     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    76       1    -45.333279    -45.333279    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    77       1    -45.333281    -45.333281    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    78       1    -45.333283    -45.333283    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    79       1    -45.333286    -45.333286    -45.333240     6
+
+ * Physical Quantities at step:    80
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33329395338 Hartree a.u.
+              kinetic energy =       12.47654 Hartree a.u.
+        electrostatic energy =      -41.31438 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12725 Hartree a.u.
+  n-l pseudopotential energy =        4.92050 Hartree a.u.
+ exchange-correlation energy =      -24.54319 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.95981440648960E-02     0.60976636383561E-02    -0.10004563834234E-01
+   Si     -0.22830170217729E-02     0.53202465161238E+01     0.53188178995368E+01
+   Si      0.53166956068949E+01     0.53101562832815E+01     0.25154385767597E-03
+   Si      0.53198390855704E+01     0.16118269991195E-02     0.53009874349965E+01
+   Si      0.26615816546521E+01     0.26631170149669E+01     0.26625852458541E+01
+   Si      0.26720106707249E+01     0.79797751197885E+01     0.79753893494341E+01
+   Si      0.79889768309054E+01     0.79764886928138E+01     0.26602406407085E+01
+   Si      0.79848690176655E+01     0.26680114929101E+01     0.79727434077846E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.79168886232259E-05    -0.10410132903045E-04     0.13081440913485E-04
+   Si      0.21544113768979E-04     0.19189999687327E-05    -0.11882269802314E-04
+   Si     -0.57572564579111E-05     0.89035096309898E-05    -0.13411898482783E-04
+   Si      0.42462377660269E-05     0.89182868924447E-05     0.46231007283486E-05
+   Si     -0.63894418349077E-06     0.11143147642495E-05    -0.57416773571471E-05
+   Si     -0.11595324074449E-04     0.33459545229515E-05    -0.21562946575511E-05
+   Si      0.22510743523839E-05    -0.10886610921114E-05     0.15034438452231E-04
+   Si     -0.21330125482896E-05    -0.12702271784260E-04     0.45316020574142E-06
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.31E+00     2.5442E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    80       1    -45.333294    -45.333294    -45.333244     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.09s CPU      0.12s WALL (       4 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    81       1    -45.333297    -45.333297    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    82       1    -45.333300    -45.333300    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    83       1    -45.333304    -45.333304    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    84       1    -45.333307    -45.333307    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    85       1    -45.333312    -45.333312    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    86       2    -45.333317    -45.333317    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    87       2    -45.333322    -45.333322    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    88       2    -45.333327    -45.333327    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    89       2    -45.333331    -45.333331    -45.333239     6
+
+ * Physical Quantities at step:    90
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33333611010 Hartree a.u.
+              kinetic energy =       12.47663 Hartree a.u.
+        electrostatic energy =      -41.31446 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12725 Hartree a.u.
+  n-l pseudopotential energy =        4.92048 Hartree a.u.
+ exchange-correlation energy =      -24.54324 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.57940995622798E-02     0.64944081206366E-03    -0.34956255157935E-02
+   Si      0.80804234922860E-02     0.53213990107844E+01     0.53162438220449E+01
+   Si      0.53181071227335E+01     0.53165404324431E+01    -0.36542485788164E-02
+   Si      0.53234099209009E+01     0.40792149908064E-02     0.53051915819382E+01
+   Si      0.26593649253639E+01     0.26623414017593E+01     0.26575557148126E+01
+   Si      0.26662068329561E+01     0.79818456752316E+01     0.79744245701262E+01
+   Si      0.79885136307160E+01     0.79779712215388E+01     0.26617779357558E+01
+   Si      0.79818110377316E+01     0.26606782129620E+01     0.79729672077550E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.11323064755517E-04    -0.15909800961014E-04     0.18306442528342E-04
+   Si      0.25613253829388E-04     0.15816747308918E-05    -0.18531040725905E-05
+   Si      0.12321251994971E-04     0.23286044953713E-04    -0.63562859502757E-05
+   Si      0.93635136621499E-05     0.35090702243887E-05     0.15310355244994E-04
+   Si     -0.48838205077821E-05    -0.39721968688365E-05    -0.16195726240546E-04
+   Si     -0.16266251179327E-04     0.45636851647205E-05    -0.28818493135708E-05
+   Si     -0.36568402151584E-05     0.91510862839088E-05    -0.69380199093165E-05
+   Si     -0.11168042828768E-04    -0.22209563527780E-04     0.60818771306401E-06
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   2.56E+00     1.9493E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    90       2    -45.333336    -45.333336    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    91       2    -45.333339    -45.333339    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    92       2    -45.333342    -45.333342    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    93       2    -45.333343    -45.333343    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    94       2    -45.333339    -45.333339    -45.333235     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    95       2    -45.333337    -45.333337    -45.333237     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    96       2    -45.333334    -45.333334    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    97       2    -45.333329    -45.333329    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    98       2    -45.333324    -45.333324    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    99       2    -45.333320    -45.333320    -45.333240     6
+
+ * Physical Quantities at step:   100
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33331422700 Hartree a.u.
+              kinetic energy =       12.47664 Hartree a.u.
+        electrostatic energy =      -41.31446 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12726 Hartree a.u.
+  n-l pseudopotential energy =        4.92049 Hartree a.u.
+ exchange-correlation energy =      -24.54324 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si     -0.31352669705158E-03    -0.46576787728595E-02     0.27911529057642E-02
+   Si      0.16503253589404E-01     0.53204495587007E+01     0.53164169115202E+01
+   Si      0.53241118786841E+01     0.53266392780247E+01    -0.56535346296741E-02
+   Si      0.53257932832800E+01     0.37439350671203E-02     0.53122696008003E+01
+   Si      0.26602434935191E+01     0.26597803378140E+01     0.26508310733695E+01
+   Si      0.26596256400971E+01     0.79832224536594E+01     0.79736327975315E+01
+   Si      0.79865008536966E+01     0.79825569672084E+01     0.26571435603547E+01
+   Si      0.79788231172872E+01     0.26537697588207E+01     0.79735793964859E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.19081712242401E-04    -0.83087078500268E-05     0.83829401840157E-05
+   Si      0.15082632444836E-04    -0.65581947416341E-05     0.15527956965155E-05
+   Si      0.13039921608528E-04     0.23293285145491E-04    -0.47754377595151E-05
+   Si      0.12625035242301E-05    -0.49697346676561E-05     0.18582269361671E-04
+   Si      0.98466775315701E-05    -0.64639404086368E-05    -0.16577255280497E-04
+   Si     -0.14886122357485E-04     0.31724656662929E-05     0.90273269187246E-07
+   Si     -0.56737350830327E-05     0.98120587185120E-05    -0.10577460050524E-04
+   Si      0.40983457367343E-06    -0.99772318623663E-05     0.33218745791559E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.94E+00     2.4813E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   100       1    -45.333314    -45.333314    -45.333241     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.11s CPU      0.15s WALL (       5 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   101       1    -45.333306    -45.333306    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   102       1    -45.333299    -45.333299    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   103       1    -45.333294    -45.333294    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   104       1    -45.333289    -45.333289    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   105       1    -45.333286    -45.333286    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   106       1    -45.333284    -45.333284    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   107       1    -45.333283    -45.333283    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   108       1    -45.333282    -45.333282    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   109       1    -45.333282    -45.333282    -45.333240     6
+
+ * Physical Quantities at step:   110
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33328443271 Hartree a.u.
+              kinetic energy =       12.47656 Hartree a.u.
+        electrostatic energy =      -41.31442 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12726 Hartree a.u.
+  n-l pseudopotential energy =        4.92051 Hartree a.u.
+ exchange-correlation energy =      -24.54319 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si     -0.67491895044596E-02    -0.63274405898405E-02     0.20903599716061E-02
+   Si      0.19207236373479E-01     0.53183151336714E+01     0.53168935457484E+01
+   Si      0.53276119134178E+01     0.53336850273522E+01    -0.80000510673771E-02
+   Si      0.53236885849480E+01    -0.52558032649942E-04     0.53190315936200E+01
+   Si      0.26645240159795E+01     0.26590556740418E+01     0.26448795603392E+01
+   Si      0.26570366107874E+01     0.79839602918419E+01     0.79751102496927E+01
+   Si      0.79839192317543E+01     0.79842496840503E+01     0.26550392290042E+01
+   Si      0.79820495897004E+01     0.26526187981870E+01     0.79759664710294E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.12043154139410E-04     0.10309568464743E-06    -0.11853586610370E-04
+   Si     -0.90191105766903E-06    -0.38019485091830E-05     0.66694262392542E-07
+   Si      0.49923763489772E-05     0.11526881558772E-04    -0.72653731505874E-05
+   Si     -0.11166017356494E-04    -0.13014572984701E-04     0.14619114014339E-04
+   Si      0.11931627709884E-04     0.24358994015088E-05    -0.12943049474917E-04
+   Si      0.17115128608857E-05     0.13568323890325E-06     0.76404823855552E-05
+   Si     -0.66888986620344E-05    -0.17287059256872E-05     0.12885615294524E-05
+   Si      0.12164464295816E-04     0.43436675356826E-05     0.84471570441390E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.13E+00     3.2090E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   110       1    -45.333284    -45.333284    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   111       1    -45.333286    -45.333286    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   112       1    -45.333288    -45.333288    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   113       1    -45.333290    -45.333290    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   114       1    -45.333292    -45.333292    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   115       1    -45.333294    -45.333294    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   116       1    -45.333296    -45.333296    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   117       1    -45.333296    -45.333296    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   118       1    -45.333298    -45.333298    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   119       1    -45.333299    -45.333299    -45.333242     6
+
+ * Physical Quantities at step:   120
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33330158332 Hartree a.u.
+              kinetic energy =       12.47644 Hartree a.u.
+        electrostatic energy =      -41.31432 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12723 Hartree a.u.
+  n-l pseudopotential energy =        4.92049 Hartree a.u.
+ exchange-correlation energy =      -24.54314 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si     -0.93022750328971E-02    -0.49240511762246E-02    -0.47485930664559E-02
+   Si      0.16559734704663E-01     0.53171831385845E+01     0.53163722396881E+01
+   Si      0.53286022759285E+01     0.53355745455895E+01    -0.11309741033767E-01
+   Si      0.53181249046439E+01    -0.36170874469287E-02     0.53222811042777E+01
+   Si      0.26693421883156E+01     0.26608200798149E+01     0.26404006498731E+01
+   Si      0.26603159566326E+01     0.79828423128700E+01     0.79795254606255E+01
+   Si      0.79810074422121E+01     0.79808681500621E+01     0.26585518800523E+01
+   Si      0.79866377660519E+01     0.26567575222242E+01     0.79799379579216E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.50420218749451E-06     0.71082956909651E-05    -0.17571746310187E-04
+   Si     -0.11128979036952E-04    -0.12853890156126E-05    -0.24793994097116E-05
+   Si      0.18533288010351E-06    -0.15841851560822E-05    -0.87236131781664E-05
+   Si     -0.12013162113272E-04    -0.36093183166409E-05    -0.59091681554769E-06
+   Si      0.10832870356062E-04     0.29778720698352E-05    -0.97689449588654E-05
+   Si      0.12134732215754E-04    -0.53462279013716E-05     0.13436028479946E-04
+   Si     -0.86760305454968E-05    -0.14604194440785E-04     0.15454642105954E-04
+   Si      0.91694384312662E-05     0.16343147069604E-04     0.10243950086545E-04
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.54E+00     3.4573E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   120       1    -45.333302    -45.333302    -45.333243     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.13s CPU      0.18s WALL (       6 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   121       1    -45.333301    -45.333301    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   122       1    -45.333307    -45.333307    -45.333249     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   123       1    -45.333300    -45.333300    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   124       1    -45.333297    -45.333297    -45.333244     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   125       1    -45.333293    -45.333293    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   126       1    -45.333290    -45.333290    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   127       1    -45.333288    -45.333288    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   128       1    -45.333288    -45.333288    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   129       1    -45.333286    -45.333286    -45.333245     6
+
+ * Physical Quantities at step:   130
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33328141925 Hartree a.u.
+              kinetic energy =       12.47641 Hartree a.u.
+        electrostatic energy =      -41.31430 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12723 Hartree a.u.
+  n-l pseudopotential energy =        4.92050 Hartree a.u.
+ exchange-correlation energy =      -24.54312 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si     -0.68908320143886E-02    -0.97988181302479E-03    -0.97054289023610E-02
+   Si      0.11315879822075E-01     0.53170766266685E+01     0.53160161888165E+01
+   Si      0.53283220039482E+01     0.53324996212207E+01    -0.13268862740274E-01
+   Si      0.53156535123893E+01    -0.29112678059189E-02     0.53201028594257E+01
+   Si      0.26724955939588E+01     0.26600308520119E+01     0.26374148574978E+01
+   Si      0.26630855973660E+01     0.79796455103417E+01     0.79834676862770E+01
+   Si      0.79788853764319E+01     0.79758488988150E+01     0.26653149261174E+01
+   Si      0.79884208615547E+01     0.26642942510833E+01     0.79816687318462E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.12186747572291E-04     0.11940209288246E-04    -0.51416903100227E-05
+   Si     -0.14161396125201E-04     0.57775382630824E-06     0.22769025130117E-05
+   Si     -0.13382937397463E-05    -0.13644926222731E-04     0.65448795235371E-06
+   Si     -0.73540097300481E-07     0.69321937909273E-05    -0.78202749973614E-05
+   Si      0.39172910143755E-05    -0.57993268502237E-05    -0.46861768108917E-05
+   Si      0.92870954472711E-06    -0.77286645833021E-05     0.39643697311736E-05
+   Si     -0.30036204355947E-06    -0.90362653850466E-05     0.14570673840551E-04
+   Si     -0.11591561256973E-05     0.16759026135866E-04    -0.38182919188259E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.05E+00     3.1110E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   130       1    -45.333281    -45.333281    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   131       1    -45.333281    -45.333281    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   132       1    -45.333281    -45.333281    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   133       1    -45.333282    -45.333282    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   134       1    -45.333282    -45.333282    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   135       1    -45.333283    -45.333283    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   136       1    -45.333286    -45.333286    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   137       1    -45.333289    -45.333289    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   138       1    -45.333290    -45.333290    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   139       1    -45.333294    -45.333294    -45.333239     6
+
+ * Physical Quantities at step:   140
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33329671594 Hartree a.u.
+              kinetic energy =       12.47653 Hartree a.u.
+        electrostatic energy =      -41.31440 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12725 Hartree a.u.
+  n-l pseudopotential energy =        4.92050 Hartree a.u.
+ exchange-correlation energy =      -24.54318 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si     -0.14756299912041E-04     0.20953198135853E-02    -0.89246951521917E-02
+   Si      0.58717785575321E-02     0.53171604203822E+01     0.53178189550664E+01
+   Si      0.53276690248455E+01     0.53247807689715E+01    -0.11009185481985E-01
+   Si      0.53180964600227E+01     0.12741443569823E-02     0.53186641966080E+01
+   Si      0.26721308342113E+01     0.26589992790902E+01     0.26363623169731E+01
+   Si      0.26610933794993E+01     0.79782861675081E+01     0.79817326202443E+01
+   Si      0.79806497831644E+01     0.79740671840707E+01     0.26687148302720E+01
+   Si      0.79857914894556E+01     0.26688413263288E+01     0.79776519198084E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.21405589643502E-04     0.93520136626080E-06     0.79600609532626E-05
+   Si     -0.12690079076166E-04     0.30909729510034E-06     0.58186718852767E-05
+   Si     -0.21620045301154E-05    -0.23358187738892E-04     0.98904827915520E-05
+   Si      0.12087351261213E-04     0.11500701348208E-04     0.60660753526818E-07
+   Si     -0.57433257766013E-05     0.16685381501232E-05    -0.30119771522524E-07
+   Si     -0.10004833423199E-04     0.16258059328006E-05    -0.12929945690552E-04
+   Si      0.84637717246662E-05     0.12748026274039E-05     0.14624857893898E-05
+   Si     -0.11356469823301E-04     0.60440410190396E-05    -0.12232296710952E-04
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.58E+00     2.1672E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   140       1    -45.333297    -45.333297    -45.333237     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.16s CPU      0.20s WALL (       7 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   141       1    -45.333302    -45.333302    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   142       1    -45.333305    -45.333305    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   143       1    -45.333306    -45.333306    -45.333237     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   144       1    -45.333307    -45.333307    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   145       1    -45.333310    -45.333310    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   146       1    -45.333308    -45.333308    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   147       1    -45.333307    -45.333307    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   148       1    -45.333305    -45.333305    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   149       1    -45.333304    -45.333304    -45.333242     6
+
+ * Physical Quantities at step:   150
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33330121365 Hartree a.u.
+              kinetic energy =       12.47665 Hartree a.u.
+        electrostatic energy =      -41.31449 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12727 Hartree a.u.
+  n-l pseudopotential energy =        4.92051 Hartree a.u.
+ exchange-correlation energy =      -24.54324 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.71618239711454E-02     0.43027372138066E-05    -0.45071744417960E-02
+   Si      0.17403836026143E-02     0.53178426787153E+01     0.53198061484039E+01
+   Si      0.53267895395144E+01     0.53156738990461E+01    -0.63099412855253E-02
+   Si      0.53239425937521E+01     0.46214969256048E-02     0.53193075098600E+01
+   Si      0.26687609797414E+01     0.26609942606226E+01     0.26380729225633E+01
+   Si      0.26583209555332E+01     0.79807658230610E+01     0.79753734700452E+01
+   Si      0.79837179417220E+01     0.79768375656336E+01     0.26663198233702E+01
+   Si      0.79808537756197E+01     0.26687645837807E+01     0.79729481998228E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.12732561967254E-04    -0.10347705252705E-04     0.11978940647662E-04
+   Si     -0.83498865666290E-05     0.38628244764066E-05     0.29634173586458E-05
+   Si     -0.27468999113424E-05    -0.16979060439584E-04     0.12307195074407E-04
+   Si      0.12759434491290E-04     0.54546910674044E-05     0.15634707883017E-05
+   Si     -0.10396200916823E-04     0.43016455168360E-05     0.93926012312826E-05
+   Si      0.53931351873177E-06     0.89369067950445E-05    -0.15169635205102E-04
+   Si      0.73740294310905E-05     0.11898917066789E-04    -0.13064447007172E-04
+   Si     -0.11912352013609E-04    -0.71282192302697E-05    -0.99715428881014E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.57E+00     1.5757E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   150       1    -45.333301    -45.333301    -45.333242     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   151       1    -45.333297    -45.333297    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   152       1    -45.333295    -45.333295    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   153       1    -45.333294    -45.333294    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   154       1    -45.333295    -45.333295    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   155       1    -45.333296    -45.333296    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   156       1    -45.333301    -45.333301    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   157       1    -45.333301    -45.333301    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   158       1    -45.333302    -45.333302    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   159       1    -45.333303    -45.333303    -45.333239     6
+
+ * Physical Quantities at step:   160
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33330404238 Hartree a.u.
+              kinetic energy =       12.47673 Hartree a.u.
+        electrostatic energy =      -41.31454 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12728 Hartree a.u.
+  n-l pseudopotential energy =        4.92051 Hartree a.u.
+ exchange-correlation energy =      -24.54328 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.96436956088888E-02    -0.26025541372765E-02    -0.57700860570809E-03
+   Si     -0.11761064589769E-02     0.53209736890301E+01     0.53195501596355E+01
+   Si      0.53247369212357E+01     0.53125773802962E+01    -0.19621385259813E-02
+   Si      0.53270430401267E+01     0.58782352872687E-02     0.53191522488166E+01
+   Si      0.26638405101110E+01     0.26608463186510E+01     0.26447171380138E+01
+   Si      0.26617596068313E+01     0.79821076481434E+01     0.79706524609940E+01
+   Si      0.79861098343828E+01     0.79827423143154E+01     0.26587156285928E+01
+   Si      0.79793304916191E+01     0.26629815789360E+01     0.79707624694170E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.22702324487912E-06    -0.85265504385898E-06     0.63603739078812E-05
+   Si     -0.29631474656702E-05     0.10629264896449E-04    -0.46651089985940E-05
+   Si     -0.77787764376636E-05     0.21261967046237E-05     0.82227025865880E-05
+   Si      0.26497861489965E-05     0.12334453596249E-05    -0.35380998332052E-05
+   Si     -0.14209097280220E-04    -0.45760298761278E-05     0.23917507081056E-04
+   Si      0.13556017934226E-04    -0.17577986310788E-05    -0.77733182259002E-05
+   Si      0.39389437796409E-05     0.13926515420704E-04    -0.22358385554860E-04
+   Si      0.50332965655787E-05    -0.20728938830297E-04    -0.16567096299010E-06
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.71E+00     1.7571E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   160       1    -45.333304    -45.333304    -45.333239     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.18s CPU      0.24s WALL (       8 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   161       1    -45.333306    -45.333306    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   162       1    -45.333309    -45.333309    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   163       1    -45.333314    -45.333314    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   164       2    -45.333316    -45.333316    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   165       2    -45.333319    -45.333319    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   166       2    -45.333319    -45.333319    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   167       2    -45.333321    -45.333321    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   168       2    -45.333322    -45.333322    -45.333237     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   169       2    -45.333323    -45.333323    -45.333238     6
+
+ * Physical Quantities at step:   170
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33332362000 Hartree a.u.
+              kinetic energy =       12.47666 Hartree a.u.
+        electrostatic energy =      -41.31449 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12726 Hartree a.u.
+  n-l pseudopotential energy =        4.92049 Hartree a.u.
+ exchange-correlation energy =      -24.54325 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.79721260037546E-02    -0.78377501859297E-03    -0.11489528419322E-02
+   Si      0.17763839833937E-03     0.53240211867809E+01     0.53161836365298E+01
+   Si      0.53209930991743E+01     0.53167698188809E+01    -0.67182533513632E-04
+   Si      0.53266189083086E+01     0.52178449623617E-02     0.53160508160320E+01
+   Si      0.26580442233261E+01     0.26590591210089E+01     0.26566983619716E+01
+   Si      0.26672811929727E+01     0.79799692714361E+01     0.79692887461761E+01
+   Si      0.79868297304719E+01     0.79867432832315E+01     0.26509548377754E+01
+   Si      0.79833710748007E+01     0.26545078592401E+01     0.79730506952286E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.66863802933429E-05     0.82062551741348E-05    -0.81815144271306E-05
+   Si      0.83742566865515E-05     0.29413181852837E-05    -0.11185469729104E-04
+   Si     -0.10629788802071E-04     0.15813046501601E-04     0.14760546270909E-05
+   Si     -0.38382174055033E-05    -0.67474282998622E-05    -0.11690343867245E-04
+   Si     -0.11145198470226E-04    -0.12938316191045E-05     0.34800812221297E-04
+   Si      0.13285518647308E-04    -0.62789085653593E-05     0.52886397415520E-06
+   Si     -0.38461536846296E-06     0.51679538510757E-05    -0.16691308993883E-04
+   Si      0.11024425005609E-04    -0.17808405227740E-04     0.10942906194700E-04
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   2.26E+00     2.3402E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   170       2    -45.333324    -45.333324    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   171       2    -45.333324    -45.333324    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   172       2    -45.333326    -45.333326    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   173       2    -45.333323    -45.333323    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   174       2    -45.333320    -45.333320    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   175       2    -45.333316    -45.333316    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   176       1    -45.333311    -45.333311    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   177       1    -45.333307    -45.333307    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   178       1    -45.333302    -45.333302    -45.333238     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   179       1    -45.333299    -45.333299    -45.333239     6
+
+ * Physical Quantities at step:   180
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33329451233 Hartree a.u.
+              kinetic energy =       12.47660 Hartree a.u.
+        electrostatic energy =      -41.31446 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12726 Hartree a.u.
+  n-l pseudopotential energy =        4.92051 Hartree a.u.
+ exchange-correlation energy =      -24.54321 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.54036510120738E-02     0.16971869479658E-02    -0.53375355703391E-02
+   Si      0.22412188145922E-02     0.53232166039573E+01     0.53119688564312E+01
+   Si      0.53185716505501E+01     0.53231974811384E+01    -0.48989050229633E-03
+   Si      0.53245304890136E+01     0.16260686443339E-03     0.53108033864459E+01
+   Si      0.26561883910350E+01     0.26607216381896E+01     0.26695952747027E+01
+   Si      0.26716754164596E+01     0.79792977478386E+01     0.79705240456751E+01
+   Si      0.79856373671759E+01     0.79871943180960E+01     0.26451989619983E+01
+   Si      0.79870398093956E+01     0.26500170274898E+01     0.79787478591575E+01
+ 
+   ATOMIC_VELOCITIES
+   Si     -0.51390866150626E-05     0.19220062463528E-05    -0.11110617802359E-04
+   Si      0.13075931717558E-05    -0.54946929895214E-05    -0.79760090726317E-05
+   Si      0.49118427761017E-06     0.12155218470477E-04    -0.12594044025211E-05
+   Si     -0.59062774791134E-05    -0.17294180635132E-04    -0.12805972087048E-04
+   Si      0.12879688009342E-05     0.87252065982094E-05     0.24876863011581E-04
+   Si      0.77315610411252E-05     0.42752902896674E-05     0.47885828949837E-05
+   Si     -0.58441342973812E-05    -0.15245193167851E-05    -0.12466767739451E-04
+   Si      0.60711911000333E-05    -0.27643286633445E-05     0.15953325197341E-04
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.47E+00     3.4244E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   180       1    -45.333295    -45.333295    -45.333239     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.20s CPU      0.27s WALL (       9 calls)
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   181       1    -45.333291    -45.333291    -45.333239     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   182       1    -45.333287    -45.333287    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   183       1    -45.333282    -45.333282    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   184       1    -45.333278    -45.333278    -45.333240     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   185       0    -45.333275    -45.333275    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   186       0    -45.333272    -45.333272    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   187       0    -45.333270    -45.333270    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   188       0    -45.333269    -45.333269    -45.333241     6
+ cg_sub: missed minimum, case 1, iteration           4
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   189       0    -45.333268    -45.333268    -45.333241     6
+
+ * Physical Quantities at step:   190
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33326824554 Hartree a.u.
+              kinetic energy =       12.47659 Hartree a.u.
+        electrostatic energy =      -41.31447 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12727 Hartree a.u.
+  n-l pseudopotential energy =        4.92053 Hartree a.u.
+ exchange-correlation energy =      -24.54320 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.45076696154340E-02     0.10287044696685E-02    -0.87716732445947E-02
+   Si      0.10749113765480E-02     0.53205595921934E+01     0.53109961255137E+01
+   Si      0.53212626369329E+01     0.53252991265871E+01    -0.10103065631913E-04
+   Si      0.53225971276390E+01    -0.52277920794630E-02     0.53071325838147E+01
+   Si      0.26588382673774E+01     0.26635849464779E+01     0.26752022756417E+01
+   Si      0.26730172435561E+01     0.79822770670748E+01     0.79725087716350E+01
+   Si      0.79823617489101E+01     0.79855432004508E+01     0.26407944777436E+01
+   Si      0.79876283880490E+01     0.26524397653479E+01     0.79831585002996E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.13271980840746E-05    -0.39760554808598E-05    -0.46974784214428E-05
+   Si     -0.69927772066972E-05    -0.63036578741408E-05     0.40807922481842E-05
+   Si      0.10893623819467E-04    -0.12003329811816E-05     0.44580542169240E-05
+   Si     -0.30861834521142E-05    -0.77886119558026E-05    -0.41451591703808E-05
+   Si      0.11949109352333E-04     0.51289218920804E-05     0.24516264158493E-05
+   Si     -0.10814286765517E-05     0.63196095183117E-05     0.47992384122381E-05
+   Si     -0.96793574542340E-05    -0.65173757921061E-05    -0.94786583937038E-05
+   Si     -0.33301844662143E-05     0.14337502673745E-04     0.25315846923164E-05
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   7.14E-01     4.0733E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   190       0    -45.333268    -45.333268    -45.333241     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   191       0    -45.333274    -45.333274    -45.333246     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   192       0    -45.333275    -45.333275    -45.333246     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   193       0    -45.333277    -45.333277    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   194       0    -45.333276    -45.333276    -45.333243     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   195       0    -45.333282    -45.333282    -45.333246     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   196       1    -45.333286    -45.333286    -45.333246     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   197       1    -45.333291    -45.333291    -45.333246     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   198       1    -45.333294    -45.333294    -45.333245     6
+NOTE: eigenvalues are not computed without ortho
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   199       1    -45.333300    -45.333300    -45.333245     6
+
+ * Physical Quantities at step:   200
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =      -45.33330581175 Hartree a.u.
+              kinetic energy =       12.47657 Hartree a.u.
+        electrostatic energy =      -41.31442 Hartree a.u.
+                         esr =        0.00000 Hartree a.u.
+                       eself =      102.12922 Hartree a.u.
+      pseudopotential energy =        3.12725 Hartree a.u.
+  n-l pseudopotential energy =        4.92050 Hartree a.u.
+ exchange-correlation energy =      -24.54321 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00
+ 
+ 
+   CELL_PARAMETERS
+   10.64076206    0.00000000    0.00000000
+    0.00000000   10.64076206    0.00000000
+    0.00000000    0.00000000   10.64076206
+
+   System Density [g/cm^3] :              2.0898178971
+
+
+   System Volume [A.U.^3] :           1204.8089816234
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   Si      0.64624590237667E-02    -0.41856847856440E-03    -0.84629393543623E-02
+   Si     -0.16970580029136E-02     0.53210915774872E+01     0.53154265873967E+01
+   Si      0.53247865995506E+01     0.53221869991351E+01     0.53216355316145E-03
+   Si      0.53225998387691E+01    -0.58801537029380E-02     0.53079384317185E+01
+   Si      0.26639724402044E+01     0.26640091040756E+01     0.26720395750884E+01
+   Si      0.26711174953496E+01     0.79829646032405E+01     0.79747064364676E+01
+   Si      0.79793475919342E+01     0.79813362377187E+01     0.26381030923380E+01
+   Si      0.79846986266277E+01     0.26602148110465E+01     0.79807276111300E+01
+ 
+   ATOMIC_VELOCITIES
+   Si      0.70335881288423E-05     0.13311371355500E-05     0.57787257116131E-05
+   Si     -0.33673355541871E-05     0.70369717554034E-05     0.17296203404836E-04
+   Si      0.55896656668504E-05    -0.13653393669990E-04    -0.28550555417128E-05
+   Si      0.24851117360237E-05     0.43270191805909E-05     0.76335947604056E-05
+   Si      0.10089802142418E-04    -0.34602562569966E-05    -0.17316126410816E-04
+   Si     -0.85936369740705E-05    -0.33033902733886E-05     0.68618558864322E-05
+   Si     -0.14816573049099E-05    -0.14672301502968E-04    -0.31488505202236E-05
+   Si     -0.11755537841034E-04     0.22394213631863E-04    -0.14250347290470E-04
+ 
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   1.60E+00     3.4975E-04
+ 
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+ 
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   200       1    -45.333306    -45.333306    -45.333245     6
+
+   writing restart file (with schema): ./outdir/si_52.save/
+     restart      :      0.23s CPU      0.30s WALL (      10 calls)
+
+
+   Averaged Physical Quantities
+                      accumulated      this run
+   ekinc         :        0.00000       0.00000 (AU)
+   ekin          :       12.47658      12.47658 (AU)
+   epot          :      -62.73038     -62.73038 (AU)
+   total energy  :      -45.33330     -45.33330 (AU)
+   temperature   :        1.54646       1.54646 (K )
+   enthalpy      :        0.00000       0.00000 (AU)
+   econs         :      -45.33324     -45.33324 (AU)
+   pressure      :        0.00000       0.00000 (Gpa)
+   volume        :     1204.80898    1204.80898 (AU)
+
+
+
+     Called by MAIN_LOOP:
+     initialize   :      4.86s CPU      4.87s WALL (       1 calls)
+     main_loop    :   2509.09s CPU   2558.61s WALL (     200 calls)
+     cpr_total    :   2509.33s CPU   2558.93s WALL (       1 calls)
+
+     Called by INIT_RUN:
+     init_readfil :      0.01s CPU      0.02s WALL (       1 calls)
+
+     Called by CPR:
+     cpr_md       :   2509.33s CPU   2558.93s WALL (     200 calls)
+     move_electro :   2508.25s CPU   2557.67s WALL (     400 calls)
+
+     Called by move_electrons:
+     rhoofr       :    275.67s CPU    278.39s WALL (    4773 calls)
+     vofrho       :   1031.36s CPU   1068.15s WALL (    4773 calls)
+     dforce       :     88.49s CPU     89.65s WALL (   20688 calls)
+     calphi       :      5.62s CPU      5.73s WALL (    2586 calls)
+     newd         :    764.92s CPU    771.94s WALL (    2586 calls)
+     nlfl         :      0.06s CPU      0.06s WALL (     400 calls)
+     gram         :     95.89s CPU     96.22s WALL (    4773 calls)
+
+     Small boxes:
+     rhov         :    102.88s CPU    103.64s WALL (    4773 calls)
+     fftb         :    493.09s CPU    497.80s WALL ( 2843375 calls)
+     set_cc       :     16.43s CPU     16.67s WALL (    4773 calls)
+     forcecc      :     20.25s CPU     20.48s WALL (    4773 calls)
+
+     Low-level routines:
+     prefor       :      3.44s CPU      3.50s WALL (    3187 calls)
+     nlfq         :      4.02s CPU      4.05s WALL (     400 calls)
+     nlsm1        :     52.94s CPU     53.38s WALL (   16106 calls)
+     nlsm2        :      3.90s CPU      3.94s WALL (     400 calls)
+     fft          :    608.08s CPU    631.11s WALL (   47740 calls)
+     ffts         :     28.76s CPU     29.10s WALL (    9546 calls)
+     fftw         :    101.88s CPU    103.38s WALL (   79560 calls)
+     fft_scatt_xy :     86.34s CPU     90.37s WALL (  136846 calls)
+     fft_scatt_yz :    329.58s CPU    334.86s WALL (  136846 calls)
+     fft_scatt_tg :     15.85s CPU     16.15s WALL (   79560 calls)
+     betagx       :      2.99s CPU      2.99s WALL (       1 calls)
+     qradx        :      1.32s CPU      1.32s WALL (       1 calls)
+     gram         :     95.89s CPU     96.22s WALL (    4773 calls)
+     nlinit       :      4.81s CPU      4.81s WALL (       1 calls)
+     init_dim     :      0.02s CPU      0.02s WALL (       1 calls)
+     newnlinit    :      0.03s CPU      0.03s WALL (       1 calls)
+     from_restart :      0.01s CPU      0.01s WALL (       1 calls)
+     strucf       :      0.31s CPU      0.33s WALL (     401 calls)
+     calbec       :     53.06s CPU     53.43s WALL (   16106 calls)
+     runcg_uspp   :   2508.25s CPU   2557.67s WALL (     400 calls)
+     calcmt       :      0.01s CPU      0.01s WALL (     400 calls)
+     pc2          :      6.03s CPU      6.09s WALL (    6558 calls)
+     pcdaga2      :      5.25s CPU      5.30s WALL (    2186 calls)
+     set_x_minus1 :    116.17s CPU    116.57s WALL (     800 calls)
+     xminus1      :     35.73s CPU     35.87s WALL (    4372 calls)
+     emass_p_tpa  :      0.01s CPU      0.01s WALL (     400 calls)
+ 
+ 
+     CP           :  41m54.70s CPU  42m44.32s WALL
+
+ 
+   This run was terminated on:  23:35: 4  11Apr2020            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

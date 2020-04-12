@@ -1,0 +1,38 @@
+&control
+    calculation = 'cp'
+    restart_mode = 'restart'
+    prefix = 'si'
+    outdir = './outdir'
+    pseudo_dir = '/home/anonymous/quantumEspresso_2019/SSSP_precision_pseudos'
+    ndr=50, ndw=51,        ! folder for reading and writing
+    tstress=.true., tprnfor=.true.
+/
+&system
+    ibrav=8, celldm(1)=10.6407620646, celldm(2) = 1, celldm(3) = 1
+    nat=8, ntyp=1,
+    ecutwfc=50, ecutrho=400
+    nr1b=20, nr2b=20, nr3b=20,  !For US PP specify no. of points for FFT of aug. charge
+/
+&electrons
+    electron_dynamics='cg'
+    orthogonalization='ortho', ortho_eps=1d-11
+/
+&ions
+    ion_dynamics='none'
+    tranp = .true.       ! randomize atomic positions             
+    amprp = 0.03         ! displacement amplitude for the randomization
+/
+ATOMIC_SPECIES
+ Si  28.0855  Si.pbe-n-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (crystal)
+  Si     0.0000    0.0000    0.0000  1 1 1 
+  Si     0.0000    0.5000    0.5000  1 1 1 
+  Si     0.5000    0.5000    0.0000  1 1 1 
+  Si     0.5000    0.0000    0.5000  1 1 1 
+  Si     0.2500    0.2500    0.2500  1 1 1 
+  Si     0.2500    0.7500    0.7500  1 1 1 
+  Si     0.7500    0.7500    0.2500  1 1 1 
+  Si     0.7500    0.2500    0.7500  1 1 1
+
+

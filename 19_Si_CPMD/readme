@@ -1,0 +1,119 @@
+-> STEP 0: relax cell using pw.x and SAME settings (Gamma point calculation, pseudopotential... Only for crystals)
+
+########################CPMD, NVE ensemble##########################
+-> STEP 1: relax electrons (optionally ions) to the ground state
+    mpirun -np 2 cp.x < si.1_erelax.in > si.1_erelax.out
+
+(optionally: check the stress of the cell)
+
+-> STEP 2: add some random displacement
+    mpirun -np 2 cp.x < si.2_randDisplace.in > si.2_randDisplace.out
+
+remove si.* in the output directory
+
+-> STEP 3: start Car-Parrinello Molecular Dynamics (CPMD) calculation (NVE)
+    mpirun -np 2 cp.x < si.3_cp_NVE.in > si.3_cp_NVE.out
+
+plot temperature
+    gnuplot
+    plot "outdir/si.evp" using 2:5 with linespoints
+
+-> STEP 4: 
+1. compile the post-processing tool cp2xsf.f for visualizing the MD trajectory using XCrysDen (or better, you can use cppp.x from QE. Basically the same)
+    gfortran cp2xsf.f90 -o cp2xsf.x
+or
+    ifort cp2xsf.f90 -o cp2xsf.x
+2. copy si.4_cp2xsf.in and cp2xsf.x into the output directory
+2. run cp2xsf.x inside the output directory 
+    cp2xsf.x < si.4_cp2xsf.in > si.4_cp2xsf.out
+
+
+###############CPMD, NVT ensemble, with thermalstat#################
+-> STEP 1: the same (relax electrons)
+
+-> STEP 2: the same (add some random displacement, recommended. Also you can do a few steps of NVE calculation afterwards, but we will not do that for simplicity) 
+remove si.* in the output directory
+
+-> STEP 3: CPMD with NVT
+    mpirun -np 2 cp.x < si.3_cp_NVT.in > si.3_cp_NVT.out
+
+plot temperature
+    gnuplot
+    plot "outdir/si.evp" using 2:5 with linespoints
+
+
+###############BOMD, NVE ensemble#################
+
+mpirun -np 2 cp.x < inputfilename > outputfilename
+
+-> STEP 1: the same (relax electrons, but use 'cg')
+
+-> STEP 2: the same (add some random displacement, but use 'cg') 
+remove si.* in the output directory
+
+-> STEP 3: BOMD with NVE (use 'cg')
+    mpirun -np 2 cp.x < si.3_cp_BOMD.in > si.3_cp_BOMD.out
+
+plot temperature (comparing with CPMD, NVE)
+    gnuplot
+    plot "./outdir/si.evp" using 2:5 with linespoints title "BOMD NVE", \
+         "../1_CPMD_NVE/outdir/si.evp" using 2:5 with linespoints title "CPMD NVE"
+
+
+###############BOMD, NVT ensemble#################
+
+mpirun -np 2 cp.x < inputfilename > outputfilename
+
+-> STEP 1: the same (relax electrons, use 'cg')
+
+-> STEP 2: the same (add some random displacement, use 'cg') 
+remove si.* in the output directory
+
+-> STEP 3: BOMD with NVT (use 'cg', but with ion_temperature = 'nose')
+    
+
+plot temperature (comparing with CPMD, NVT)
+    gnuplot
+    plot "./outdir/si.evp" using 2:5 with linespoints title "BOMD NVT", \
+         "../2_CPMD_NVT/outdir/si.evp" using 2:5 with linespoints title "CPMD NVT"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
