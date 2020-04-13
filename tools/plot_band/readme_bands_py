@@ -1,0 +1,16 @@
+Known problems and solutions:
+
+Problem 1:
+if you see the following when running ./run.py
+"bash: ./run.py: Permission denied"
+
+-> Solution:
+chmod +x run.py
+(alternatively you can use "python run.py")
+
+Problem 2: cannot find module
+"ImportError: No module named matplotlib.mlab"
+
+-> Solution:
+sudo apt-get install python-matplotlib
+("pip install matplotlib" results in a bug "ImportError: No module named functools_lru_cache" at run-time in Ubuntu in my case)
