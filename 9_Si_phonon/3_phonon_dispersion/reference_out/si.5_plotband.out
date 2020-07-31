@@ -1,0 +1,8 @@
+     Input file > Reading    6 bands at     91 k-points
+Range:    0.0000  492.7933eV  Emin, Emax > high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   0.0000
+high-symmetry point:  1.0000 0.0000 0.0000   x coordinate   1.0000
+high-symmetry point:  0.7500 0.0000 0.7500   x coordinate   1.7906
+high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   2.8512
+high-symmetry point:  0.5000 0.5000 0.5000   x coordinate   3.7173
+output file (gnuplot/xmgr) > bands in gnuplot/xmgr format written to file si.phonon.bands.xmgr                                                                                                                                                                                                                                            
+output file (ps) > Efermi > deltaE, reference E (for tics) bands in PostScript format written to file si.phonon.bands.ps                                                                                                                                                                                                                                              

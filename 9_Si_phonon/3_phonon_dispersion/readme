@@ -1,0 +1,25 @@
+
+##################phonon dispersion##################
+
+#######this part is the same as in the last calculation about phonon DOS
+---->step1: scf calculation
+	pw.x -inp si.1_scf.in > si.1_scf.out
+---->step2: calculation of dynamical matrices on q-vector in reciprocal space
+     (generate 'si.dyn' files)
+	ph.x -inp si.2_ph.in > si.2_ph.out
+---->step3: calculation of ineratomic force constants in real space (Fourier transform of the output from step2)
+     (input: 'si.dyn' files from last step)
+     (output: 'si.k444.fc' file)
+	q2r.x -inp si.3_q2r.in > si.3_q2r.out
+)
+
+#######new steps
+---->step4: calculation of phonon frequency at any given list of q-vectors (to get DOS or dispersion)
+     (input: 'si.k444.fc' file from last step)
+     (output: 'si.freq' file and 'si.freq.gp' file)
+	matdyn.x -inp si.4_matdyn_2_dispersion.in > si.4_matdyn_2_dispersion.out
+---->step5: plotband.x
+     (input: 'si.freq')
+        plotband.x < si.5_plotband.in > si.5_plotband.out
+
+
